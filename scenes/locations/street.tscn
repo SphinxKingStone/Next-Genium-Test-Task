@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://1mfjtc0vacra"]
+[gd_scene load_steps=17 format=3 uid="uid://1mfjtc0vacra"]
 
 [ext_resource type="Texture2D" uid="uid://bw3nxjqbfuxgf" path="res://assets/tilesets/background/GROUND DETAIL 1 - DAY.png" id="1_helun"]
 [ext_resource type="Texture2D" uid="uid://c2oiunxsfsyuw" path="res://assets/tilesets/background/GROUND DETAIL 2 - DAY.png" id="2_r852c"]
@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://4sanj3375nae" path="res://assets/tilesets/background/GROUND DETAIL 5 - DAY.png" id="5_7njsf"]
 [ext_resource type="Texture2D" uid="uid://kpip0bm0pg2i" path="res://assets/tilesets/background/GROUND TILE - DAY.png" id="6_bj3pn"]
 [ext_resource type="Texture2D" uid="uid://dujw24x6grkx8" path="res://assets/tilesets/background/HOUSE 1 - DAY.png" id="7_f006g"]
-[ext_resource type="PackedScene" uid="uid://bs5bn1j73bavs" path="res://scenes/player.tscn" id="8_v1kdw"]
-[ext_resource type="PackedScene" uid="uid://4b8nwnbada77" path="res://scenes/house.tscn" id="9_gii4x"]
+[ext_resource type="PackedScene" uid="uid://4b8nwnbada77" path="res://scenes/entities/house.tscn" id="9_gii4x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqvux"]
 texture = ExtResource("1_helun")
@@ -219,9 +218,6 @@ sources/4 = SubResource("TileSetAtlasSource_t76pj")
 sources/5 = SubResource("TileSetAtlasSource_3fwad")
 sources/6 = SubResource("TileSetAtlasSource_lgggv")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_veuki"]
-distance = -115.0
-
 [node name="Street" type="Node2D"]
 y_sort_enabled = true
 
@@ -238,28 +234,5 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Player" parent="." instance=ExtResource("8_v1kdw")]
-
 [node name="House" parent="." instance=ExtResource("9_gii4x")]
 position = Vector2(-53, 41)
-
-[node name="WorldBorder" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(0, 30)
-shape = SubResource("WorldBoundaryShape2D_veuki")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(0, -13)
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_veuki")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(-9, 0)
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_veuki")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(25, 0)
-rotation = 4.71239
-shape = SubResource("WorldBoundaryShape2D_veuki")

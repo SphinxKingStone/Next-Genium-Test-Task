@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://4b8nwnbada77"]
 
 [ext_resource type="Texture2D" uid="uid://dujw24x6grkx8" path="res://assets/tilesets/background/HOUSE 1 - DAY.png" id="1_5tw3b"]
-[ext_resource type="Script" path="res://scripts/house.gd" id="1_jw5bx"]
+[ext_resource type="Script" path="res://scripts/entities/house.gd" id="1_vpiih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kexkw"]
 size = Vector2(82, 96)
@@ -12,7 +12,7 @@ size = Vector2(32, 12)
 [node name="House" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-65, 85)
-script = ExtResource("1_jw5bx")
+script = ExtResource("1_vpiih")
 
 [node name="Texture" type="TextureRect" parent="."]
 anchors_preset = 7
