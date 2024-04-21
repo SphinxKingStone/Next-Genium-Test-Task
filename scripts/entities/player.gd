@@ -8,7 +8,6 @@ var max_health: int = 10
 var health: int = 10
 var keys: int = 0
 
-@onready var keys_label 
 
 func _physics_process(delta) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -40,3 +39,7 @@ func update_movement_animation(direction: Vector2) -> void:
 		facing = "right"
 	
 	$Animation.play(state + "_" + facing)
+
+func add_key() -> void:
+	keys += 1
+	UI.update_keys_label(keys)

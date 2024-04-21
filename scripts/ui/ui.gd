@@ -6,11 +6,11 @@ extends CanvasLayer
 @onready var text_timer = $TextTimer as Timer
 
 func  _ready() -> void:
-	update_keys_label("0")
+	update_keys_label(0)
 	text_timer.timeout.connect(self._text_timer_timeout)
 
-func update_keys_label(text: String) -> void:
-	keys_label.text = text
+func update_keys_label(amount: int) -> void:
+	keys_label.text = "Keys: %d" % amount
 
 func new_interactive_text(text: String) -> void:
 	text_label.visible = true

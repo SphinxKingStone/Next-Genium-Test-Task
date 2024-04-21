@@ -790,11 +790,15 @@ layer_1/tile_data = PackedInt32Array(1638358, 29, 0, 1638366, 32, 0, 1572836, 29
 
 [node name="Collectable" parent="." instance=ExtResource("36_vrukf")]
 position = Vector2(-101, 118)
-item_name = "Key"
+item_code = "key"
 
 [node name="Collectable2" parent="." instance=ExtResource("36_vrukf")]
 position = Vector2(-210, 129)
-item_name = "Ass"
+item_code = "apple"
+
+[node name="Collectable3" parent="." instance=ExtResource("36_vrukf")]
+position = Vector2(-159, 182)
+item_code = "olive"
 
 [node name="House" parent="." instance=ExtResource("9_gii4x")]
 position = Vector2(-262, -33)

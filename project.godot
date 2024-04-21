@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="jRPG Test Task"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
+Collectables="*res://game_data/collectables/collectables.gd"
 UI="*res://scenes/ui/ui.tscn"
+Player="*res://scenes/entities/player.tscn"
+
+[display]
+
+window/stretch/aspect="expand"
 
 [input]
 

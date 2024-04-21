@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bs5bn1j73bavs"]
+[gd_scene load_steps=34 format=3 uid="uid://bs5bn1j73bavs"]
 
 [ext_resource type="Script" path="res://scripts/entities/player.gd" id="1_01rj5"]
 [ext_resource type="Texture2D" uid="uid://menvq0fanrih" path="res://assets/spritesheets/main_character/main_character.png" id="2_ek6w4"]
@@ -248,10 +248,8 @@ radius = 6.08276
 [sub_resource type="CircleShape2D" id="CircleShape2D_lcpsl"]
 radius = 35.0143
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uq0ak"]
-radius = 15.0
-
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(0, 100)
 script = ExtResource("1_01rj5")
@@ -272,10 +270,3 @@ zoom = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionHitbox"]
 shape = SubResource("CircleShape2D_lcpsl")
-
-[node name="CollectionHitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
-position = Vector2(0, 8)
-shape = SubResource("CircleShape2D_uq0ak")
-debug_color = Color(0.449474, 0.587317, 0.300478, 0.42)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cer5qm7ee1xbn"]
+[gd_scene load_steps=6 format=3 uid="uid://cer5qm7ee1xbn"]
 
 [ext_resource type="Script" path="res://scripts/entities/interactable.gd" id="1_s8n77"]
+[ext_resource type="FontFile" uid="uid://5y27ie2vccj6" path="res://assets/fonts/slkscr.ttf" id="2_1r8ct"]
 [ext_resource type="Texture2D" uid="uid://btcth5j7qdj2r" path="res://assets/images/interactables/rotten_basket.png" id="2_q8v3o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxb5j"]
@@ -22,7 +23,8 @@ offset_top = -59.0
 offset_right = 28.0
 offset_bottom = -36.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("2_1r8ct")
+theme_override_font_sizes/font_size = 15
 text = "Press E to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
