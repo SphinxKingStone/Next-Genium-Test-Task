@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1mfjtc0vacra"]
+[gd_scene load_steps=18 format=3 uid="uid://1mfjtc0vacra"]
 
 [ext_resource type="Texture2D" uid="uid://bw3nxjqbfuxgf" path="res://assets/tilesets/background/GROUND DETAIL 1 - DAY.png" id="1_helun"]
 [ext_resource type="Texture2D" uid="uid://c2oiunxsfsyuw" path="res://assets/tilesets/background/GROUND DETAIL 2 - DAY.png" id="2_r852c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://4sanj3375nae" path="res://assets/tilesets/background/GROUND DETAIL 5 - DAY.png" id="5_7njsf"]
 [ext_resource type="Texture2D" uid="uid://kpip0bm0pg2i" path="res://assets/tilesets/background/GROUND TILE - DAY.png" id="6_bj3pn"]
 [ext_resource type="Texture2D" uid="uid://dujw24x6grkx8" path="res://assets/tilesets/background/HOUSE 1 - DAY.png" id="7_f006g"]
+[ext_resource type="PackedScene" uid="uid://cer5qm7ee1xbn" path="res://scenes/entities/interactable.tscn" id="9_2u23t"]
 [ext_resource type="PackedScene" uid="uid://4b8nwnbada77" path="res://scenes/entities/house.tscn" id="9_gii4x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqvux"]
@@ -236,3 +237,11 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="House" parent="." instance=ExtResource("9_gii4x")]
 position = Vector2(-53, 41)
+
+[node name="Interactable" parent="." instance=ExtResource("9_2u23t")]
+position = Vector2(95, -52)
+unique_text = "eww..."
+
+[node name="Interactable2" parent="." instance=ExtResource("9_2u23t")]
+position = Vector2(88, 116)
+unique_text = "delicious!"

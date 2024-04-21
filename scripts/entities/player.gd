@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
-var speed = 100
 
+var speed: int = 100
 var movement_state: String = "idle"
 var facing: String = "up"
+var max_health: int = 10
+var health: int = 10
+var keys: int = 0
+
+@onready var keys_label 
 
 func _physics_process(delta) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -16,7 +21,6 @@ func _physics_process(delta) -> void:
 	
 	velocity = direction * speed
 	move_and_slide()
-	
 
 func update_movement_animation(direction: Vector2) -> void:
 	var state: String
