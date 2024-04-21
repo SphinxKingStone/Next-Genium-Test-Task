@@ -1,36 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqvyc70ofc5yx"]
+[gd_scene load_steps=4 format=3 uid="uid://dqvyc70ofc5yx"]
 
 [ext_resource type="PackedScene" uid="uid://1mfjtc0vacra" path="res://scenes/locations/street.tscn" id="1_6le6q"]
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_67iv2"]
 [ext_resource type="PackedScene" uid="uid://bs5bn1j73bavs" path="res://scenes/entities/player.tscn" id="2_uuk8q"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w8n1d"]
-distance = -115.0
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_67iv2")
-
-[node name="WorldBorder" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(0, 30)
-shape = SubResource("WorldBoundaryShape2D_w8n1d")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(0, -13)
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_w8n1d")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(-9, 0)
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_w8n1d")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(25, 0)
-rotation = 4.71239
-shape = SubResource("WorldBoundaryShape2D_w8n1d")
 
 [node name="Street" parent="." instance=ExtResource("1_6le6q")]
 
 [node name="Player" parent="." instance=ExtResource("2_uuk8q")]
+position = Vector2(-22, 37)

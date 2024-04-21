@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cer5qm7ee1xbn"]
+[gd_scene load_steps=5 format=3 uid="uid://cer5qm7ee1xbn"]
 
 [ext_resource type="Script" path="res://scripts/entities/interactable.gd" id="1_s8n77"]
 [ext_resource type="Texture2D" uid="uid://btcth5j7qdj2r" path="res://assets/images/interactables/rotten_basket.png" id="2_q8v3o"]
@@ -6,28 +6,42 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxb5j"]
 radius = 23.0217
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifv4t"]
+size = Vector2(30, 40)
+
 [node name="Interactable" type="Node2D"]
 script = ExtResource("1_s8n77")
 
-[node name="Texture" type="TextureRect" parent="."]
-anchors_preset = 7
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -27.0
+offset_top = -59.0
+offset_right = 28.0
+offset_bottom = -36.0
 grow_horizontal = 2
-grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Press E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -20)
 texture = ExtResource("2_q8v3o")
-stretch_mode = 5
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="InteractionArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, -20)
 shape = SubResource("CircleShape2D_jxb5j")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_ifv4t")
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_area_2d_area_exited"]
