@@ -827,6 +827,22 @@ position = Vector2(-318, -90)
 scale = Vector2(0.5, 0.5)
 unique_text = "eww..."
 
+[node name="Collectable4" parent="." instance=ExtResource("36_vrukf")]
+position = Vector2(367, -168)
+item_code = "key"
+
+[node name="Collectable6" parent="." instance=ExtResource("36_vrukf")]
+position = Vector2(444, 225)
+item_code = "key"
+
+[node name="Collectable5" parent="." instance=ExtResource("36_vrukf")]
+position = Vector2(283, -88)
+item_code = "alarm_potion"
+
+[node name="Collectable7" parent="." instance=ExtResource("36_vrukf")]
+position = Vector2(44, 65)
+item_code = "token"
+
 [node name="StreetBorder" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StreetBorder"]

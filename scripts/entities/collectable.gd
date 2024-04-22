@@ -19,9 +19,25 @@ func update_item() -> void:
 
 func _on_collection_hitbox_body_entered(body) -> void:
 	if body.name == "Player":
-		if item_code == "key":
-			Player.add_key()
-	collect_item()
+		apply_item_effects(item_code)
+		collect_item()
+
+func apply_item_effects(item_code: String):
+	if item_code == "key":
+		Player.add_key()
+	if item_code == "apple":
+		Player.change_hp(1)
+	if item_code == "orange":
+		Player.change_max_hp(1)
+		Player.change_hp(1)
+	if item_code == "red_pepper":
+		Player.change_hp(-1)
+	if item_code == "olive":
+		Player.change_max_hp(-10)
+	if item_code == "alarm_potion":
+		for ch in get_tree().get_root().get_children():
+			if ch is Game:
+				ch.lock_everything()
 
 # removes item
 func collect_item() -> void:

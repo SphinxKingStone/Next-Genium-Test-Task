@@ -16,13 +16,9 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
 
-Collectables="*res://game_data/collectables/collectables.gd"
 UI="*res://scenes/ui/ui.tscn"
 Player="*res://scenes/entities/player.tscn"
-
-[display]
-
-window/stretch/aspect="expand"
+Collectables="*res://game_data/collectables/collectables.gd"
 
 [input]
 

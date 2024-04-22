@@ -25,4 +25,14 @@ var items = {
 		code = "red_pepper",
 		icon = load("res://assets/images/collectable/red_pepper.png"),
 	},
+	
+	alarm_potion = {
+		code = "alarm_potion",
+		icon = load("res://assets/images/collectable/alarm_potion.png"),
+	},
+	
+	token = {
+		code = "token",
+		icon = load("res://assets/images/collectable/token.png"),
+	},
 }

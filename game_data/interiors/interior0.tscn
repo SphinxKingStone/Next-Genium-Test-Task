@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://qm1ixhdonwo6"]
+[gd_scene load_steps=9 format=3 uid="uid://qm1ixhdonwo6"]
 
 [ext_resource type="Script" path="res://scripts/locations/interior.gd" id="1_s75qh"]
 [ext_resource type="Texture2D" uid="uid://l740g2rfdjqm" path="res://assets/tilesets/interior/atlas_32x.png" id="2_jbls5"]
 [ext_resource type="PackedScene" uid="uid://cer5qm7ee1xbn" path="res://scenes/entities/interactable.tscn" id="3_qc8ef"]
+[ext_resource type="PackedScene" uid="uid://bw1owuveso62g" path="res://scenes/entities/collectable.tscn" id="4_u1dur"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpuj2"]
 texture = ExtResource("2_jbls5")
@@ -2693,5 +2694,9 @@ position = Vector2(0, -72)
 position = Vector2(-116, -105)
 scale = Vector2(0.5, 0.5)
 unique_text = "ew..."
+
+[node name="Collectable" parent="." instance=ExtResource("4_u1dur")]
+position = Vector2(101, -94)
+item_code = "key"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
